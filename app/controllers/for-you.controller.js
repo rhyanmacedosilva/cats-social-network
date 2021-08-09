@@ -1,12 +1,13 @@
 class ForYouController {
     constructor(expressServer) {
         this.expressServer = expressServer;
-        this.model = new this.expressServer.app.models['cat.model']();
+        this.model = new this.expressServer.app.models['cat.model'](expressServer);
     }
 
     async index(res) {
-        let newPosts = await this.model.getNewPosts(2);
-        res.render('for-you/index', { posts: newPosts });
+        this.model.getNewPosts(() => {
+            res.render('for-you/index', { posts: this.model.posts });
+        });
     }
 }
 

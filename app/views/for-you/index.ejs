@@ -12,10 +12,6 @@
 <body>
     <nav class="navbar fixed-top navbar-expand-sm navbar-light bg-light">
         <a class="navbar-brand" href="#">Cat's Social Network</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
     </nav>
     <div class="container">
         <div class="row">
@@ -34,6 +30,9 @@
                             </span>
                             <h5 class="card-title post-author-name">
                                 <?= post.author ?>
+                                <span class="post-author-status">
+                                    <?= post.authorStatus ?>
+                                </span>
                             </h5>
                         </div>
                         <div class="post-data">

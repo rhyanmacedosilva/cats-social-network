@@ -1,0 +1,68 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="vendor/bootstrap-5.1.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Cat's Social Network</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <a class="navbar-brand" href="#">Cat's Social Network</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">For You</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Old Posts</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-6 for-you-feed">
+                <? for (let post of posts) { ?>
+                <div class="card text-dark bg-light mb-3">
+                    <div class="card-header">
+                        Posted by
+                        <?= post.author ?> 2m
+                    </div>
+                    <div class="card-body">
+                        <div class="post-author-data">
+                            <img src="<?= post.authorPictureSrc ?>" alt="picture-not-found"
+                                class="responsive post-author-picture">
+                            <h5 class="card-title post-author-name">
+                                <?= post.author ?>
+                            </h5>
+                        </div>
+                        <div class="post-data">
+                            <hr>
+                            <p class="card-text">
+                                <small class="card-subtitle mb-2 text-muted">
+                                    Posted at
+                                    <?= post.postedAt ?>
+                                </small>
+                                -
+                                <?= post.sentence ?>
+                            </p>
+                            <a href="#" class="card-link">Follow</a>
+                            <a href="#" class="card-link">Like</a>
+                        </div>
+                    </div>
+                </div>
+                <? } ?>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

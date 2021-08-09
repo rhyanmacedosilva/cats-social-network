@@ -1,0 +1,29 @@
+.navbar-brand {
+    margin-left: 20px;
+}
+
+.post-author-picture {
+    width: 100px;
+    height: 100px;
+    -webkit-border-radius: 100px;
+    -webkit-background-clip: padding-box;
+    -moz-border-radius: 100px;
+    -moz-background-clip: padding;
+    border-radius: 100px;
+    background-clip: padding-box;
+    background-size: cover;
+    background-position: center center;
+}
+
+.post-author-picture {
+    margin-bottom: 10px;
+}
+
+.for-you-feed {
+    margin: 0 auto;
+}
+
+.for-you-feed .card {
+    text-align: center;
+    margin-top: 20px;
+}

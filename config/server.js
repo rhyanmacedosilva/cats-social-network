@@ -1,5 +1,6 @@
 class Server {
     constructor() {
+        this.env = require('dotenv').config();
         this.express = require('express');
         this.consign = require('consign');
 

@@ -52,11 +52,13 @@ class CatModel {
         let authorPictureSrc = await this.getNewPictureSrc();
         let sentence = await this.getNewSentence();
         let postedAt = this.getPostedAt();
+        let lifeTime = this.getLifeTime(postedAt);
         let post = {
             author: author,
             authorPictureSrc: authorPictureSrc,
             sentence: sentence,
-            postedAt: postedAt
+            postedAt: postedAt,
+            lifeTime: lifeTime
         };
         return post;
     }
@@ -70,16 +72,31 @@ class CatModel {
     }
 
     getPostedAt() {
-        // @todo: melhorar o calculo dos minutos, pois se a hora do post for menor 
-        // que a hora atual pode pegar qualquer valor para os minutos entre 0 e 60
-        let currentTimeInHours = +this.moment().format('HH') + 1;
-        let currentTimeInMinutes = +this.moment().format('mm') + 1;
-        let hours = Math.floor(Math.random(0, currentTimeInHours) * currentTimeInHours);
+        let currentTimeHours = +this.moment().format('HH') + 1;
+        let currentTimeMinutes = +this.moment().format('mm') + 1;
+        let hours = Math.floor(Math.random(0, currentTimeHours) * currentTimeHours);
+        let postTimeMaxMinutes = currentTimeMinutes;
+        if (hours < (currentTimeHours - 1)) {
+            postTimeMaxMinutes = 60;
+        }
         hours = (hours < 10 ? '0' + hours : hours);
-        let minutes = Math.floor(Math.random(0, currentTimeInMinutes) * currentTimeInMinutes);
+        let minutes = Math.floor(Math.random(0, postTimeMaxMinutes) * postTimeMaxMinutes);
         minutes = (minutes < 10 ? '0' + minutes : minutes);
         let postedAt = hours + ':' + minutes;
         return postedAt;
+    }
+
+    getLifeTime(postedAt) {
+        postedAt = this.moment(postedAt, 'HH:mm');
+        let currentTime = this.moment();
+        let duration = this.moment.duration(currentTime.diff(postedAt));
+        let durationAsMinutes = parseInt(duration.asMinutes()) % 60;
+        let durationAsHours = parseInt(duration.asHours());
+        let durationAsText =
+            (durationAsHours != 0 ? durationAsHours + 'h ' : '') +
+            durationAsMinutes + 'm';
+        console.log(durationAsText);
+        return durationAsText;
     }
 }
 

@@ -5,7 +5,7 @@ class ForYouController {
     }
 
     async index(res) {
-        let newPosts = await this.model.getNewPosts(7);
+        let newPosts = await this.model.getNewPosts(2);
         res.render('for-you/index', { posts: newPosts });
     }
 }

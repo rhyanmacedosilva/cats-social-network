@@ -20,14 +20,22 @@ Além de utilizar alguns conhecimentos adquiridos até a etapa atual do curso, e
 
 ## Executando o Projeto
 
-Para o correto funcionamento do projeto, é necessário instalar um banco de dados MySQL e criar as tabelas envolvidas utilizando o script `db.sql` contido no projeto
+Para o correto funcionamento do projeto, é necessário instalar um banco de dados MySQL e criar a database e as tabelas envolvidas utilizando o script `db.sql` contido no projeto
 
-Em seguida executar os comandos `npm install` para instalar as dependências do projeto e `nodemon app.js` para subir o servidor http.
+Como trata-se apenas de um projeto de estudo, na raiz do projeto você pode localizar o arquivo `.env`, que contém as variáveis de ambiente para que você possa facilmente parametrizar os dados de conexão com o banco.
+
+Além disso, no mesmo arquivo é possível parametrizar quantos posts de novos "usuários" e quantos posts de "usuários antigos" serão gerados a cada acesso:
+
+`NEW_POSTS_FROM_NEW_USERS_AMOUNT=1`
+
+`NEW_POSTS_FROM_EXISTENT_USERS_AMOUNT=0`
+
+Com os passos descritos acima em mente, basta executar os comandos `npm install` para instalar as dependências do projeto e `nodemon app.js` para subir o servidor http.
 
 ## Tecnologias
 
-* NodeJS + Express (desenvolvimento do projeto)
-* MySQL (banco de dados)
-* Axios (requisições Http)
-* nodemon (espécie de hot restart)
-* consign (carregamento automático de scripts)
+* [NodeJS](https://nodejs.org/en/) + Express (desenvolvimento do projeto)
+* [MySQL](https://www.mysql.com/) (banco de dados)
+* [Axios](https://www.npmjs.com/package/axios) (requisições Http)
+* [nodemon](https://www.npmjs.com/package/nodemon) (espécie de hot restart)
+* [consign](https://www.npmjs.com/package/consign) (carregamento automático de scripts)

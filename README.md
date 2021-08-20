@@ -1,16 +1,16 @@
 # Cats Social Network - Angular
 
 Projeto criado para estudar **nodejs** e aplicar alguns dos conhecimentos iniciais adquiridos no [Curso Completo do Desenvolvedor NodeJS e MongoDB.](https://www.udemy.com/course/curso-completo-do-desenvolvedor-nodejs)
-Além de aplicar alguns conhecimentos além daqueles adquiridos até a etapa atual do curso, este projeto foi uma oportunidade para utilizar o [Notion](notion.so) pela primeira vez para gerenciar um projeto.
+Além de utilizar alguns conhecimentos adquiridos até a etapa atual do curso, este projeto foi também uma oportunidade para utilizar o [Notion](notion.so) pela primeira vez para gerenciar um projeto.
 
 ## Funcionalidades Desenvolvidas
 
-* Em cada acesso gerar um feed com posts falsos "realizados por gatos"
-* Cada post deverá ter uma foto e nome do autor, bem como uma frase aleatória que será o post em si. Lista de APIs abaixo
-* Salvar "gatos autores" no banco para possibilitar novos posts de autores antigos
+* Em cada acesso gerar um feed com posts falsos "criados por gatos"
+* Cada post deverá ter a foto e o nome do autor, bem como uma frase aleatória que será o post em si. Lista de APIs abaixo
+* Salvar os "gatos autores" no banco para possibilitar novos posts de autores antigos
 * Salvar informações vinculando um gato a uma foto de perfil para armazenar os "usuários" da rede social
 * Salvar no banco os posts dos "novos gatos autores"
-* Criar novos posts com os "usuários antigos" do site.
+* Criar novos posts com os "usuários antigos" da plataforma
 
 ## APIs Utilizadas
 
@@ -20,8 +20,9 @@ Além de aplicar alguns conhecimentos além daqueles adquiridos até a etapa atu
 
 ## Executando o Projeto
 
-npm install
-nodemon app.js
+Para o correto funcionamento do projeto, é necessário instalar um banco de dados MySQL e criar as tabelas envolvidas utilizando o script `db.sql` contido no projeto
+
+Em seguida executar os comandos `npm install` para instalar as dependências do projeto e `nodemon app.js` para subir o servidor http.
 
 ## Tecnologias
 

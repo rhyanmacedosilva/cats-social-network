@@ -1,4 +1,4 @@
-# cats-social-network - Angular
+# Cats Social Network - Angular
 
 Projeto criado para estudar **nodejs** e aplicar alguns dos conhecimentos iniciais adquiridos no [Curso Completo do Desenvolvedor NodeJS e MongoDB.](https://www.udemy.com/course/curso-completo-do-desenvolvedor-nodejs)
 Além de aplicar alguns conhecimentos além daqueles adquiridos até a etapa atual do curso, este projeto foi uma oportunidade para utilizar o [Notion](notion.so) pela primeira vez para gerenciar um projeto.
